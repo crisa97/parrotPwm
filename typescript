@@ -1,0 +1,8 @@
+Script started on 2026-06-10 15:38:37-05:00 [COMMAND="echo Test123.. | sudo -S tee /usr/share/xsessions/bspwm.desktop > /dev/null" <not executed on terminal>]
+[Desktop Entry]
+Name=bspwm
+Comment=Binary window manager
+Exec=bspwm
+Type=Application
+[sudo] contraseña para crisa: 
+Script done on 2026-06-10 15:38:39-05:00 [COMMAND_EXIT_CODE="0"]
