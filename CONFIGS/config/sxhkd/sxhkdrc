@@ -138,9 +138,9 @@ super + shift + f
 super + b
 	bash /home/crisa/.config/burpSuiteRun.sh
 
-# Thunar File Manager
-super + shift + a
-	thunar
+# File Manager (Caja)
+super + e
+	caja
 
 # Postman
 alt + p
