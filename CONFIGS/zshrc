@@ -115,3 +115,5 @@ export PATH="$PATH:/home/crisa/.local/bin"
 
 # opencode
 export PATH=/home/crisa/.opencode/bin:$PATH
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

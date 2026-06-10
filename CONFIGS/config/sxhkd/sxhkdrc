@@ -160,12 +160,18 @@ alt + p
         screenshot window
 
 # Volume
-#XF86AudioRaiseVolume
-#    pactl set-sink-volume 0 +5%
-#XF86AudioLowerVolume
-#    pactl set-sink-volume 0 -5%
-#XF86AudioMute
-#    pactl set-sink-mute 0 toggle
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+XF86AudioLowerVolume
+	amixer set Master 5%-
+XF86AudioMute
+	amixer set Master toggle
+F2
+	amixer set Master 5%-
+F3
+	amixer set Master 5%+
+F4
+	amixer set Master toggle
 
 # Screen Brightness
 #XF86MonBrightness{Up,Down}  
