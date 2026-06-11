@@ -46,7 +46,11 @@ super + g
 super + {t,shift + t,s}
 	bspc node -t {tiled,pseudo_tiled,floating}
 super + f
-	~/.config/bspwm/toggle-fullscreen.sh
+	~/.config/bspwm/scripts/toggle-fullscreen.sh
+
+# Emergency exit fullscreen
+@Escape
+	~/.config/bspwm/scripts/exit-fullscreen.sh
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -75,6 +79,12 @@ super + bracket{left,right}
 # focus the last node/desktop
 super + {grave,Tab}
 	bspc {node,desktop} -f last
+
+# alt+tab para cambiar entre ventanas (estilo Windows)
+alt + Tab
+	bspc node -f next.local.!hidden.window
+alt + shift + Tab
+	bspc node -f prev.local.!hidden.window
 
 # focus the older or newer node in the focus history
 super + {o,i}
@@ -130,9 +140,9 @@ super + alt + {Left,Down,Up,Right}
 # Custom Launchers App #
 ########################
 
-# Firefox
+# Chromium
 super + shift + f
-	firefox
+	chromium
 
 # BurpSuite
 super + b
@@ -142,9 +152,18 @@ super + b
 super + e
 	caja
 
+# Visual Studio Code
+super + v
+	code
+
 # Postman
 alt + p
 	snap run postman > /dev/null 2>&1 & disown
+
+###############
+# Lock Screen
+ctrl + super + l
+	dm-tool lock
 
 ###############
 # ScreenShots #
@@ -166,11 +185,11 @@ XF86AudioLowerVolume
 	amixer set Master 5%-
 XF86AudioMute
 	amixer set Master toggle
-F2
+super + F2
 	amixer set Master 5%-
-F3
+super + F3
 	amixer set Master 5%+
-F4
+super + F4
 	amixer set Master toggle
 
 # Screen Brightness
