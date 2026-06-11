@@ -18,38 +18,113 @@ sudo reboot
 - Una vez reiniciado, selecciona **bspwm** en la pantalla de inicio de sesión (LightDM).
 - El fondo de pantalla se toma de ~/Wallpapers/wallpaper.*
 
-## Comandos
+## Atajos de teclado
 
-| Comando                     | Descripción                                                 |
-|-----------------------------|-------------------------------------------------------------|
-| Clic derecho en Polybar     | Cambia el tema de Polybar usando el menú del clic derecho   |
-| Windows + 1,2,3,4           | Navega entre escritorios                                    |
-| Windows + Enter             | Abre una nueva terminal                                     |
-| Windows + Flechas           | Navega entre ventanas abiertas                              |
-| Windows + Tab               | Cambia entre los dos escritorios más recientes              |
-| Windows + Shift + W         | Cierra la terminal actual                                   |
-| Windows + Alt + R           | Recarga el entorno de escritorio                            |
-| Windows + Alt + Q           | Reiniciar BSPWM                                             |
-| Windows + Alt + Flechas     | Redimensiona la ventana actual                              |
-| Windows + Shift + F         | Abre Firefox                                                |
-| Windows + Shift + B         | Abre Burp Suite                                             |
-| Windows + Shift + A         | Abre el gestor de archivos Thunar                           |
-| Windows + Shift + 1,2,3,4   | Mueve la ventana actual a otro escritorio                   |
-| Windows + Shift + Flechas   | Mueve la ventana actual                                     |
-| Ctrl + Shift + -+           | Cambia el tamaño del texto en la terminal                   |
-| Ctrl + T                    | Abre un buscador avanzado desde la terminal                 |
-| .config/sxhkd/sxhkdrc       | Archivo de configuración de atajos (sxhkd)                  |
-| .config/bspwm/bspwmrc       | Archivo de configuración de BSPWM                           |
-| .config/polybar             | Carpeta con temas de Polybar                                |
-| .config/kitty/kitty.conf    | Archivo de configuración predeterminado para el terminal Kitty |
-| ~/Wallpapers                | Carpeta de fondos de pantalla. Solo se permite un archivo llamado wallpaper.jpg |
-| target 10.0.0.1             | Selecciona una IP de destino y se muestra en la Polybar     |
-| target reset                | Elimina el objetivo seleccionado                            |
-| tmux                        | Cambia la terminal a tmux                                   |
-| tmux --help                 | Muestra la ayuda de tmux                                    |
-| p10k configure              | Configura el tema de terminal Powerlevel10K                 |
-| .zshrc                      | Archivo de configuración de ZSH y alias de comandos         |
-| bpython                     | Python interactivo en la terminal                           |
+### BSPWM / Ventanas
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + Enter` | Abre Kitty |
+| `Win + D` | Lanzador de programas (Rofi) |
+| `Win + W` | Cerrar ventana |
+| `Win + Shift + W` | Forzar cierre |
+| `Win + S` | Modo flotante |
+| `Win + T` | Modo tiled |
+| `Win + Shift + T` | Modo pseudo-tiled |
+| `Win + F` | Fullscreen (abajo del polybar) |
+| `Win + M` | Alternar layout (tiled/monocle) |
+| `Win + G` | Swap con ventana más grande |
+
+### Navegación
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + Flechas` | Focus en dirección |
+| `Win + Shift + Flechas` | Mover ventana en dirección |
+| `Win + 1-0` | Ir al escritorio 1-10 |
+| `Win + Shift + 1-0` | Mover ventana a escritorio |
+| `Win + Tab` | Último escritorio |
+| `Win + Grave (\`\`)` | Último nodo |
+| `Win + [, ]` | Escritorio anterior / siguiente |
+| `Win + P` | Focus al nodo padre |
+| `Win + ,` | Focus al primer nodo |
+| `Win + .` | Focus al segundo nodo |
+| `Win + C` | Siguiente ventana visible |
+| `Win + Shift + C` | Ventana anterior visible |
+| `Win + O` | Nodo anterior en historial |
+| `Win + I` | Nodo más reciente en historial |
+
+### Redimensionar / Mover flotantes
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + Alt + Flechas` | Redimensionar ventana |
+| `Win + Ctrl + Flechas` | Mover ventana flotante |
+| `Win + Ctrl + 1-9` | Ratio de preselección |
+| `Win + Ctrl + Space` | Cancelar preselección |
+| `Win + Ctrl + Alt + Flechas` | Preseleccionar dirección |
+
+### Marcadores
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + Ctrl + M` | Marcar nodo |
+| `Win + Ctrl + X` | Bloquear nodo |
+| `Win + Ctrl + Y` | Sticky |
+| `Win + Ctrl + Z` | Private |
+
+### Aplicaciones
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + B` | Burp Suite |
+| `Win + E` | Gestor de archivos (Caja) |
+| `Win + Shift + F` | Firefox |
+| `Alt + P` | Postman |
+| `Print` | Captura de pantalla (selección) |
+| `Ctrl + Print` | Captura de pantalla completa |
+| `Alt + Print` | Captura de ventana |
+
+### Sistema
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Win + Alt + R` | Recargar bspwm |
+| `Win + Alt + Q` | Salir de bspwm |
+| `Win + Escape` | Recargar sxhkd |
+
+### Volumen
+
+| Atajo | Descripción |
+|-------|-------------|
+| `F2` | Bajar volumen |
+| `F3` | Subir volumen |
+| `F4` | Silenciar / activar |
+| Teclas multimedia | Subir / bajar / silenciar |
+
+### Kitty (terminal)
+
+| Atajo | Descripción |
+|-------|-------------|
+| `Ctrl + Shift + Enter` | Nuevo split |
+| `Ctrl + Shift + T` | Nuevo tab |
+| `Ctrl + Shift + Flechas` | Navegar entre splits |
+| `Ctrl + Shift + ]` | Siguiente tab |
+| `Ctrl + Shift + [` | Tab anterior |
+| `Ctrl + Shift + Z` | Modo stack |
+| `Ctrl + Left` / `Right` | Saltar palabra |
+| `Alt + Left` / `Right` | Inicio / final línea |
+
+### Otros
+
+| Comando | Descripción |
+|---------|-------------|
+| `target <IP>` | Seleccionar objetivo (se muestra en polybar) |
+| `target reset` | Eliminar objetivo |
+| `tmux` | Cambiar a tmux |
+| `p10k configure` | Configurar Powerlevel10K |
+| `bpython` | Python interactivo |
+| Clic derecho en polybar | Cambiar tema
 
 ## Paquetes incluídos:
 
