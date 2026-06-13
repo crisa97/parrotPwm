@@ -163,7 +163,7 @@ alt + p
 ###############
 # Lock Screen
 ctrl + super + l
-	dm-tool lock
+	loginctl lock-session
 
 ###############
 # ScreenShots #

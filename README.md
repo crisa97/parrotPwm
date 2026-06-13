@@ -7,16 +7,19 @@ Adaptado de [crisa97/parrotpwm](https://github.com/crisa97/parrotpwm) para Parro
 ## Instalación y uso
 
 - Se recomienda el uso de una instalación nueva/limpia de Parrot OS.
-- Testado en Parrot OS 6.x con VMware, VirtualBox y Bare Metal.
+- Testado en Parrot OS 7.x con VMware, VirtualBox y Bare Metal.
 
 ```
 git clone https://github.com/tu-usuario/parrotpwm.git
 cd parrotpwm
-bash parrotpwm.sh
+bash parrotpwm-v2.sh
 sudo reboot
 ```
-- Una vez reiniciado, selecciona **bspwm** en la pantalla de inicio de sesión (LightDM).
+- Una vez reiniciado, selecciona **bspwm** en la pantalla de inicio de sesión (SDDM/LightDM).
 - El fondo de pantalla se toma de ~/Wallpapers/wallpaper.*
+
+> **Nota:** Si usas Parrot OS 6.x, utiliza `parrotpwm.sh` (versión original).  
+> `parrotpwm-v2.sh` está adaptado para Parrot OS 7.x.
 
 ## Atajos de teclado
 
@@ -149,6 +152,8 @@ Picom
 Neovim
 dirsearch
 feroxbuster
+Dolphin (KDE)
+Kate (KDE)
 ```
 
 ## Créditos

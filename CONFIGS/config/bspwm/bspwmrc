@@ -33,8 +33,9 @@ sleep 1
 bspc config focus_follows_pointer true
 bspc config top_padding 48
 
-# Resolución Full HD
-xrandr --output Virtual1 --mode 1920x1080
+# Resolución Full HD (auto-detected by installer)
+# xrandr --output Virtual1 --mode 1920x1080
+# xrandr --output Virtualbox-0 --mode 1920x1080
 
 # PICOM
 picom &
