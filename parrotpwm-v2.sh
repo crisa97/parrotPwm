@@ -73,7 +73,8 @@ exec_sudo apt update
 echo -e "\n${BLUE}[*] Instalando paquetes..${RESET}\n"
 exec_sudo apt install -y git bspwm vim feh scrot scrub zsh rofi xclip xsel locate wmname acpi sxhkd \
     imagemagick ranger kitty tmux python3-pip font-manager lsd bat bpython open-vm-tools fastfetch \
-    dolphin kate
+    dolphin kate dunst copyq brightnessctl playerctl yad xdotool flameshot suckless-tools \
+    network-manager-applet redshift picom
 
 # dirsearch y feroxbuster (no todos están en repos de Parrot)
 echo -e "\n${BLUE}[*] Instalando dirsearch..${RESET}\n"
@@ -220,6 +221,19 @@ meson --buildtype=release . build
 ninja -C build
 exec_sudo ninja -C build install
 
+# Instalar i3lock-color desde fuente
+echo -e "\n${BLUE}[*] Instalando i3lock-color..${RESET}\n"
+exec_sudo apt install -y autoconf automake libtool libxcb1-dev libxcb-util-dev libxcb-image0-dev \
+    libxcb-randr0-dev libxcb-composite0-dev libxcb-xinerama0-dev libxcb-xkb-dev libxcb-xrm-dev \
+    libev-dev libpam0g-dev libxkbcommon-dev libxkbcommon-x11-dev libjpeg-dev libgif-dev
+git clone --depth=1 https://github.com/Raymo111/i3lock-color.git /tmp/i3lock-color
+cd /tmp/i3lock-color
+autoreconf -i
+./configure
+make -j$(nproc)
+exec_sudo cp x86_64-pc-linux-gnu/i3lock /usr/local/bin/i3lock-color
+cd $RPATH
+
 # Crear archivo de sesión para el gestor de pantalla (SDDM/LightDM)
 echo -e "\n${BLUE}[*] Creando entrada de sesión para bspwm..${RESET}\n"
 echo "$SUDO_PASS" | sudo -S tee /usr/share/xsessions/bspwm.desktop > /dev/null << 'EOF'
@@ -241,6 +255,8 @@ mkdir ~/screenshots
 # Copiar configuraciones
 echo -e "\n${BLUE}[*] Instalando configuraciones..${RESET}\n"
 cp -rv $RPATH/CONFIGS/config/* ~/.config/
+cp -rv $RPATH/CONFIGS/rofi ~/.config/
+cp -rv $RPATH/CONFIGS/picom ~/.config/
 cp -rv $RPATH/SCRIPTS/* ~/.config/polybar/forest/scripts/
 
 # Detectar VM y activar resolución adecuada en bspwmrc
@@ -276,6 +292,8 @@ chmod +x ~/.config/bspwm/scripts/bspwm_resize
 chmod +x ~/.config/polybar/launch.sh
 chmod +x ~/.config/polybar/forest/scripts/target.sh
 chmod +x ~/.config/polybar/forest/scripts/screenshot.sh
+chmod +x ~/.config/polybar/forest/scripts/calendar.sh
+chmod +x ~/.config/bspwm/scripts/dropdown.sh 2>/dev/null || true
 
 # Detener el refresco de sudo
 kill $KEEP_SUDO_PID 2>/dev/null

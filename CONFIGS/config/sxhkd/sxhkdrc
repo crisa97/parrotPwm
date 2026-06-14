@@ -146,11 +146,15 @@ super + shift + f
 
 # BurpSuite
 super + b
-	bash /home/crisa/.config/burpSuiteRun.sh
+	bash /home/crisa97/.config/burpSuiteRun.sh
 
-# File Manager (Caja)
+# Dropdown terminal
+super + apostrophe
+	~/.config/bspwm/scripts/dropdown.sh
+
+# File Manager (Dolphin)
 super + e
-	caja
+	dolphin
 
 # Visual Studio Code
 super + v
@@ -163,7 +167,7 @@ alt + p
 ###############
 # Lock Screen
 ctrl + super + l
-	loginctl lock-session
+	i3lock -c 000000
 
 ###############
 # ScreenShots #
@@ -193,9 +197,13 @@ super + F4
 	amixer set Master toggle
 
 # Screen Brightness
-#XF86MonBrightness{Up,Down}  
-#    brightnessctl -c backlight s 10{+,-}
+XF86MonBrightnessUp
+    brightnessctl -c backlight s +10%
+XF86MonBrightnessDown
+    brightnessctl -c backlight s 10%-
 
 # Keyboard backlight
-#XF86KbdBrightness{Up,Down}
-#    brightnessctl -d smc::kbd_backlight s 10{+,-}
+XF86KbdBrightnessUp
+    brightnessctl -d smc::kbd_backlight s +10% 2>/dev/null || true
+XF86KbdBrightnessDown
+    brightnessctl -d smc::kbd_backlight s 10%- 2>/dev/null || true

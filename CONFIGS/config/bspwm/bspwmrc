@@ -21,6 +21,7 @@ bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a burp-StartBurp state=floating center=true follow=on
 bspc rule -a burp state=floating center=true follow=on
+bspc rule -a dropdown state=floating sticky=on rectangle=1400x600+260+0
 
 # WALLPAPER
 feh --bg-fill "$HOME/Wallpapers/wallpaper.jpg"
@@ -41,4 +42,12 @@ bspc config top_padding 48
 picom &
 bspc config border_width 0
 
+# NOTIFICATIONS
+dunst &
+
+# CLIPBOARD MANAGER
+copyq &
+
+# AUTO-LOCK (10 min idle)
+xss-lock -- i3lock -c 000000 &
 xsetroot -cursor_name left_ptr &

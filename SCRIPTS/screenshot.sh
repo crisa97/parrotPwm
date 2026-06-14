@@ -1,11 +1,7 @@
 #! /bin/sh
 
-output=~/screenshots/%Y-%m-%d-%T-sc.png
-
 case "$1" in
-	"select") scrot -s -q 100 -l mode=classic "$output" || exit ;;
-	"window") scrot -q 100 --focused -b "$output" || exit ;;
-	*) scrot "$output" || exit ;;
+	"select") flameshot gui ;;
+	"window") flameshot full -p ~/screenshots ;;
+	*) flameshot full -p ~/screenshots ;;
 esac
-
-notify-send "Screenshot taken."

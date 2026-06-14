@@ -1,0 +1,84 @@
+* {
+  bg-col: #282c34;
+  bg-alt-col: #2c323c;
+  bg-hl-col: #3e4451;
+  fg-col: #abb2bf;
+  fg-hl-col: #61afef;
+  urgent-col: #e06c75;
+  border-col: #3e4451;
+  spacing: 2;
+  font: "Hack Nerd Font 12";
+}
+
+window {
+  width: 600px;
+  border: 1px;
+  border-color: @border-col;
+  background-color: @bg-col;
+  border-radius: 8px;
+  transparency: "real";
+  location: center;
+  anchor: center;
+  fullscreen: false;
+}
+
+mainbox {
+  spacing: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+inputbar {
+  enabled: true;
+  spacing: 8;
+  padding: 12px;
+  background-color: @bg-alt-col;
+  border-radius: 8px 8px 0 0;
+  text-color: @fg-col;
+}
+
+entry {
+  placeholder: "Search...";
+  placeholder-color: @fg-col;
+  text-color: @fg-hl-col;
+  cursor: text;
+}
+
+listview {
+  lines: 8;
+  columns: 1;
+  spacing: 2;
+  padding: 8px;
+  dynamic: true;
+  layout: vertical;
+  cycle: true;
+}
+
+element {
+  padding: 8px;
+  border-radius: 4px;
+  text-color: @fg-col;
+  background-color: transparent;
+}
+
+element selected {
+  background-color: @bg-hl-col;
+  text-color: @fg-hl-col;
+}
+
+element-icon {
+  size: 24px;
+}
+
+element-text {
+  vertical-align: 0.5;
+  horizontal-align: 0.0;
+  margin: 0 8px;
+}
+
+message {
+  padding: 8px;
+  background-color: @bg-alt-col;
+  border-radius: 0 0 8px 8px;
+  text-color: @fg-col;
+}
