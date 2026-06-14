@@ -28,7 +28,7 @@ feh --bg-fill "$HOME/Wallpapers/wallpaper.jpg"
 
 # POLYBAR
 sleep 1
-~/.config/polybar/launch.sh --forest
+polybar -q main -c ~/.config/polybar/forest/config.ini &
 
 # CUSTOM
 bspc config focus_follows_pointer true
@@ -39,7 +39,7 @@ bspc config top_padding 48
 # xrandr --output Virtualbox-0 --mode 1920x1080
 
 # PICOM
-picom &
+picom --config ~/.config/picom/picom.conf --no-use-damage -b &
 bspc config border_width 0
 
 # NOTIFICATIONS
@@ -49,5 +49,11 @@ dunst &
 copyq &
 
 # AUTO-LOCK (10 min idle)
-xss-lock -- i3lock -c 000000 &
+xss-lock -- i3lock-color -c 000000 --insidever=282c34 --ringver=61afef --insidewrong=282c34 --ringwrong=e06c75 --inside=282c34 --ring=abb2bf --line=3e4451 --separator=3e4451 --verif-color=61afef --wrong-color=e06c75 --time-color=abb2bf --date-color=abb2bf --layout-color=61afef --keyhl-color=61afef --bshl-color=e06c75 --time-str="%H:%M:%S" --date-str="%A, %d %B %Y" --time-size=40 --date-size=20 --screen 1 --clock --indicator &
 xsetroot -cursor_name left_ptr &
+
+# NETWORK APPLET (system tray)
+nm-applet &
+
+# REDSHIFT (blue light filter)
+redshift -l 4.711:-74.072 -t 5700:3500 &
