@@ -25,6 +25,8 @@ bspc rule -a dropdown state=floating sticky=on rectangle=1400x600+260+0
 
 # WALLPAPER
 feh --bg-fill "$HOME/Wallpapers/wallpaper.jpg"
+# LOCK SCREEN WALLPAPER (dimmed)
+convert "$HOME/Wallpapers/wallpaper.jpg" -resize 1920x1080! -fill black -colorize 40% "$HOME/.config/i3lock/lock.png" 2>/dev/null
 
 # POLYBAR
 sleep 1
@@ -49,7 +51,7 @@ dunst &
 copyq &
 
 # AUTO-LOCK (10 min idle)
-xss-lock -- xset dpms force off && sleep 0.3 && i3lock-color -i ~/.cache/betterlockscreen/current/lock_dim.png -n &
+xss-lock -- i3lock-color -i ~/.config/i3lock/lock.png -n &
 xsetroot -cursor_name left_ptr &
 
 # NETWORK APPLET (system tray)
