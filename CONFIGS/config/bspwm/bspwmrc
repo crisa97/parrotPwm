@@ -39,7 +39,7 @@ bspc config top_padding 48
 # xrandr --output Virtualbox-0 --mode 1920x1080
 
 # PICOM
-picom --config ~/.config/picom/picom.conf --no-use-damage -b &
+picom --no-use-damage -b &
 bspc config border_width 0
 
 # NOTIFICATIONS
