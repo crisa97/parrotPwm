@@ -190,7 +190,7 @@ alt + p
 ###############
 # Lock Screen
 ctrl + super + l
-	i3lock-color -i ~/.config/i3lock/lock.png -n
+	~/.config/i3lock/lock.sh
 
 ###############
 # ScreenShots #

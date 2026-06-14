@@ -51,7 +51,7 @@ dunst &
 copyq &
 
 # AUTO-LOCK (10 min idle)
-xss-lock -- i3lock-color -i ~/.config/i3lock/lock.png -n &
+xss-lock -- ~/.config/i3lock/lock.sh &
 xsetroot -cursor_name left_ptr &
 
 # NETWORK APPLET (system tray)
