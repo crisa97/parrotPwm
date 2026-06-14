@@ -57,3 +57,6 @@ nm-applet &
 
 # REDSHIFT (blue light filter)
 redshift -l 4.711:-74.072 -t 5700:3500 &
+
+# CONKY (desktop info)
+conky -c ~/.config/conky/conky.conf &
