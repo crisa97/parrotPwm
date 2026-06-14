@@ -190,7 +190,7 @@ alt + p
 ###############
 # Lock Screen
 ctrl + super + l
-	betterlockscreen -l dimblur
+	i3lock-color -i ~/.cache/betterlockscreen/current/lock_dim.png -n --nofork
 
 ###############
 # ScreenShots #

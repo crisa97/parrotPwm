@@ -96,7 +96,7 @@ sudo reboot
 |-------|-------------|
 | `Win + Alt + R` | Recargar bspwm |
 | `Win + Alt + Q` | Salir de bspwm |
-| `Ctrl + Win + L` | Bloquear pantalla (i3lock-color) |
+| `Ctrl + Win + L` | Bloquear pantalla (i3lock-color + dim) |
 | `Win + Escape` | Recargar sxhkd |
 
 ### Aplicaciones

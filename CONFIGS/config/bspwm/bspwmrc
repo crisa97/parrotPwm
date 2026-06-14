@@ -49,7 +49,7 @@ dunst &
 copyq &
 
 # AUTO-LOCK (10 min idle)
-xss-lock -- betterlockscreen -l dimblur &
+xss-lock -- i3lock-color -i ~/.cache/betterlockscreen/current/lock_dim.png -n &
 xsetroot -cursor_name left_ptr &
 
 # NETWORK APPLET (system tray)
