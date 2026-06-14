@@ -105,8 +105,8 @@ sudo reboot
 |-------|-------------|
 | `Win + B` | Burp Suite |
 | `Win + E` | Dolphin (gestor de archivos) |
-| `Win + V` | Visual Studio Code |
-| `Win + Shift + F` | Chromium |
+| `Win + V` | VSCodium |
+| `Win + Shift + F` | Firefox |
 | `Ctrl + Win + O` | Obsidian |
 | `Win + Ctrl + P` | gpick (selector de color) |
 | `Alt + P` | Postman |

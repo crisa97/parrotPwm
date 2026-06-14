@@ -146,9 +146,9 @@ super + alt + {Left,Down,Up,Right}
 # Custom Launchers App #
 ########################
 
-# Chromium
+# Chromium / Firefox
 super + shift + f
-	chromium
+	firefox
 
 # BurpSuite
 super + b
@@ -162,9 +162,9 @@ super + apostrophe
 super + e
 	dolphin
 
-# Visual Studio Code
+# Visual Studio Code / Codium
 super + v
-	code
+	codium
 
 # Obsidian
 ctrl + super + o
