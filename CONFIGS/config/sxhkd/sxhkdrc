@@ -170,9 +170,6 @@ super + v
 ctrl + super + o
 	obsidian
 
-# btop (system monitor)
-super + n
-	kitty -e btop
 
 # gpick (color picker)
 super + ctrl + p
