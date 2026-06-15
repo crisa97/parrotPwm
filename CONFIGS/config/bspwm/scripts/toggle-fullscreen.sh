@@ -5,6 +5,5 @@ if [ "$STATE" = "fullscreen" ]; then
     bspc node "$WID" -t tiled
     polybar-msg cmd show
 else
-    bspc node "$WID" -t fullscreen
-    polybar-msg cmd hide
+    bspc node "$WID" -t tiled
 fi
