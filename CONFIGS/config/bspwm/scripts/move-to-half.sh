@@ -3,10 +3,10 @@ WID=$(xdotool getactivewindow)
 DIR=$1
 
 MONINFO=$(bspc query -T -m focused)
-MONW=$(echo "$MONINFO" | grep -oP '"width":\s*\K\d+')
-MONH=$(echo "$MONINFO" | grep -oP '"height":\s*\K\d+')
-MONX=$(echo "$MONINFO" | grep -oP '"x":\s*\K\d+')
-MONY=$(echo "$MONINFO" | grep -oP '"y":\s*\K\d+')
+MONW=$(echo "$MONINFO" | jq -r '.rectangle.width')
+MONH=$(echo "$MONINFO" | jq -r '.rectangle.height')
+MONX=$(echo "$MONINFO" | jq -r '.rectangle.x')
+MONY=$(echo "$MONINFO" | jq -r '.rectangle.y')
 PADDING=48
 
 case "$DIR" in
