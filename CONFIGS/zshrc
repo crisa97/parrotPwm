@@ -53,8 +53,8 @@ alias ls='lsd --group-dirs=first'
 alias catp='batcat'
 alias cat='batcat --paging=never'
 alias catn='/usr/bin/cat'
-alias burpsuitepro='bash /home/crisa/.config/burpSuiteRun.sh'
-alias codeql='/home/crisa/codeql/codeql'
+alias burpsuitepro='bash /home/crisa97/.config/burpSuiteRun.sh'
+alias codeql='/home/crisa97/codeql/codeql'
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias grep='grep --color=auto'
@@ -110,10 +110,14 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 preexec () { print -Pn "\e]0;$1 - Parrot Terminal\a" }
 
 
+# Android SDK
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$ANDROID_HOME/platform-tools:$ANDROID_HOME/cmdline-tools/latest/bin:$PATH
+
 # Created by `pipx` on 2026-04-08 17:09:22
-export PATH="$PATH:/home/crisa/.local/bin"
+export PATH="$PATH:/home/crisa97/.local/bin"
 
 # opencode
-export PATH=/home/crisa/.opencode/bin:$PATH
+export PATH=/home/crisa97/.opencode/bin:$PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
